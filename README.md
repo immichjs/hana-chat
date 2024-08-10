@@ -11,7 +11,7 @@ Este monorepo contém múltiplos projetos agrupados em um único repositório. E
 A estrutura do repositório é a seguinte:
 
 ./api - Temos api construído em Node.js com framework Nest.js
-./presentation - Existem 4 projetos front-end. ["client", "admin"] são construídos em Nuxt.js 3 e ["ng-client", "ng-admin"] são em Angular 18
+./apps - Existem 4 projetos front-end. ["client", "admin"] são construídos em Nuxt.js 3 e ["ng-client", "ng-admin"] são em Angular 18
 
 ### Instalação e configuração
 
@@ -29,19 +29,19 @@ cd api
 pnpm install
 
 // Admin em Nuxt.js 3
-cd presentation/admin
+cd apps/admin
 pnpm install
 
 // Client em Nuxt.js 3
-cd presentation/client
+cd apps/client
 pnpm install
 
 // Admin em Angular 18
-cd presentation/ng-admin
+cd apps/ng-admin
 pnpm install
 
 // Client em Angular 18
-cd presentation/ng-client
+cd apps/ng-client
 pnpm install
 ```
 
@@ -49,7 +49,7 @@ pnpm install
 
 ```
 // [Api]
-pnpm start:dev
+pnpm dev
 
 // [Client]
 pnpm dev
@@ -58,10 +58,10 @@ pnpm dev
 pnpm dev
 
 // [Ng Admin]
-pnpm start
+pnpm dev
 
 // [Ng Admin]
-pnpm start
+pnpm dev
 ```
 
 ### Documentações e links úteis
