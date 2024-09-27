@@ -21,18 +21,19 @@ Instale o gerenciador de pacote "pnpm"
 npm install -g pnpm@latest
 ```
 
-Posteriormente entre em cada projeto e instale as dependências.
+Posteriormente entre em cada projeto e instale as ferramentas e dependências.
 
 ```
 // API
 cd api
 pnpm install
+pnpm docker:up
 
-// Admin em Nuxt.js 3
+// Admin
 cd apps/admin
 pnpm install
 
-// Client em Nuxt.js 3
+// Client
 cd apps/client
 pnpm install
 ```
@@ -40,13 +41,7 @@ pnpm install
 ### Como rodar os projetos
 
 ```
-// [Api]
-pnpm dev
-
-// [Client]
-pnpm dev
-
-// [Admin]
+// API | Client | Admin
 pnpm dev
 ```
 

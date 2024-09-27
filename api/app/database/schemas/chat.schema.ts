@@ -1,4 +1,3 @@
-// src/chat/schemas/chat.schema.ts
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { Message, MessageSchema } from './message.schema';
