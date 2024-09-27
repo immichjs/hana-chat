@@ -1,5 +1,6 @@
 <template>
-	<NuxtLayout>
-		<NuxtPage />
-	</NuxtLayout>
+	<div class="flex">
+		<HistoricChat />
+		<Chat />
+	</div>
 </template>

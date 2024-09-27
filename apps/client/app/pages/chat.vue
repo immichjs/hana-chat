@@ -8,7 +8,7 @@
 		/>
 	</form>
 	<div v-for="msg in messages" :key="msg.id">
-		{{ msg.sender }}: {{ msg.text }}
+		[{{ msg.sender }}]: {{ msg.message }}
 	</div>
 </template>
 
@@ -19,16 +19,22 @@ const messages = ref<any[]>([]);
 const { $websocket } = useNuxtApp();
 
 const sendMessage = () => {
-	if ($websocket.connected) {
-		console.log("Sending message:", message.value);
-		$websocket.emit("message", { sender: "User", text: message.value });
-		message.value = "";
-	} else {
-		console.error("Socket not connected");
-	}
+	$websocket.emit("send-message", {
+		sender: "Client",
+		chatId: "teste",
+		message: message.value,
+	});
+
+	message.value = "";
+};
+
+const fetchMessages = () => {
+	$websocket.emit("get-messages");
 };
 
 onMounted(() => {
+	fetchMessages();
+
 	$websocket.on("connect", () => {
 		console.log("Connected to WebSocket server");
 	});
@@ -37,9 +43,8 @@ onMounted(() => {
 		console.log("Disconnected from WebSocket server");
 	});
 
-	$websocket.on("message", (data) => {
-		console.log("Received message:", data);
-		messages.value.push(data);
+	$websocket.on("messages", (msgs) => {
+		messages.value = msgs;
 	});
 });
 </script>
