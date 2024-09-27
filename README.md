@@ -1,4 +1,4 @@
-# Unnamed Chat
+# Hana Chat
 
 Este projeto é uma POC (Proof of Concept) para validar a ideia de um sistema de chat altamente escalável e implantável em diversos projetos pessoas e empresariais.
 
